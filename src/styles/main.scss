@@ -1,7 +1,122 @@
-@import "utils";
-@import "fonts";
-@import "typography";
-
 body {
-  background: $c-gray;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  max-width: 662px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.form {
+  position: relative;
+  border-radius: 25px;
+  border: 1px solid #2f4feb;
+  padding: 90px 50px;
+
+  &__btn-close {
+    width: 31px;
+    height: 31px;
+    background-image: url(../images/close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    cursor: pointer;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    color: #2f4feb;
+    margin-bottom: 60px;
+  }
+
+  &__input {
+    display: block;
+    max-width: 95%;
+    width: 100%;
+    font-size: 20px;
+    line-height: 57px;
+    padding-left: 20px;
+    border: 1px solid #2f4feb;
+    margin-top: 42px;
+
+    &.error {
+      margin-bottom: 10px;
+      outline-color: #91192d;
+
+      & ~ .form__input {
+        margin-top: 20px;
+      }
+    }
+
+    &-password {
+      margin-top: 42px !important;
+    }
+  }
+
+  label.error {
+    color: #91192d;
+  }
+
+  &__btn {
+    display: block;
+    margin: 54px auto 0;
+    max-width: 405px;
+    width: 100%;
+    font-size: 30px;
+    line-height: 68px;
+    color: #fff;
+    background: #2f4feb;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: 40px 20px;
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__btn {
+      margin-top: 45px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .form {
+    padding: 30px 15px;
+
+    &__title {
+      font-size: 25px;
+      padding-right: 20px;
+    }
+
+    &__btn-close {
+      top: 15px;
+      right: 15px;
+    }
+
+    &__input {
+      font-size: 16px;
+      line-height: 45px;
+
+      &-name {
+        margin-top: 20px;
+      }
+    }
+  
+    &__btn {
+      font-size: 25px;
+      line-height: 50px;
+    }
+  }
 }
